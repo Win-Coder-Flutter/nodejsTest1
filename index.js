@@ -1,13 +1,14 @@
+require("dotenv").config();
 const express = require("express");
 const server = express();
 const bodyParser = require("body-parser");
 server.use(bodyParser.json());
-const testRoude=require("./routes/test");
-server.use("/test",testRoude);
-const loginRoute=require("./routes/login");
-server.use("/login",loginRoute);
-const profileRoute=require("./routes/profile");
-server.use("/profile",profileRoute);
+const testRoude = require("./routes/test");
+server.use("/test", testRoude);
+const loginRoute = require("./routes/login");
+server.use("/login", loginRoute);
+const profileRoute = require("./routes/profile");
+server.use("/profile", profileRoute);
 const userList = [
 
 ];
@@ -172,6 +173,6 @@ server.get("*", (req, res, next) => {
     });
 });
 
-server.listen(3000, () => {
-    console.log("Server is running on port 3000");
+server.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 })
