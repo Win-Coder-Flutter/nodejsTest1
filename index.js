@@ -6,6 +6,8 @@ const testRoude=require("./routes/test");
 server.use("/test",testRoude);
 const loginRoute=require("./routes/login");
 server.use("/login",loginRoute);
+const profileRoute=require("./routes/profile");
+server.use("/profile",profileRoute);
 const userList = [
 
 ];
