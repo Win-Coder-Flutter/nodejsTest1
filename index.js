@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 server.use(bodyParser.json());
 const testRoude=require("./routes/test");
 server.use("/test",testRoude);
+const loginRoute=require("./routes/login");
+server.use("/login",loginRoute);
 const userList = [
 
 ];
